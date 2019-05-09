@@ -1,0 +1,12 @@
+D:\Random\LCC\CS260\Lab6\HashProject\UnitTesting\bin\Debug\UnitTesting.dll
+D:\Random\LCC\CS260\Lab6\HashProject\UnitTesting\bin\Debug\UnitTesting.pdb
+D:\Random\LCC\CS260\Lab6\HashProject\UnitTesting\bin\Debug\HashTable.cs.dll
+D:\Random\LCC\CS260\Lab6\HashProject\UnitTesting\bin\Debug\nunit.framework.dll
+D:\Random\LCC\CS260\Lab6\HashProject\UnitTesting\bin\Debug\HashTable.cs.pdb
+D:\Random\LCC\CS260\Lab6\HashProject\UnitTesting\bin\Debug\nunit.framework.pdb
+D:\Random\LCC\CS260\Lab6\HashProject\UnitTesting\bin\Debug\nunit.framework.xml
+D:\Random\LCC\CS260\Lab6\HashProject\UnitTesting\obj\Debug\UnitTesting.csprojAssemblyReference.cache
+D:\Random\LCC\CS260\Lab6\HashProject\UnitTesting\obj\Debug\UnitTesting.csproj.CoreCompileInputs.cache
+D:\Random\LCC\CS260\Lab6\HashProject\UnitTesting\obj\Debug\UnitTesting.csproj.CopyComplete
+D:\Random\LCC\CS260\Lab6\HashProject\UnitTesting\obj\Debug\UnitTesting.dll
+D:\Random\LCC\CS260\Lab6\HashProject\UnitTesting\obj\Debug\UnitTesting.pdb
