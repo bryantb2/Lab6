@@ -67,10 +67,25 @@ namespace UnitTesting
             defaultHashTable.AddItem("abc");
             defaultHashTable.AddItem("123"); //should double here
             defaultHashTable.AddItem("890");
-            Assert.AreEqual(originalSize * 2, defaultHashTable.Size);
+            Assert.AreEqual(23, defaultHashTable.Size);
         }
 
-
+        [Test]
+        public void FindAndRemoveTest()
+        {
+            int originalSize = defaultHashTable.Size;
+            defaultHashTable.AddItem("obi-wan");
+            defaultHashTable.AddItem("anakin");
+            defaultHashTable.AddItem("grevious");
+            defaultHashTable.AddItem("vader");
+            defaultHashTable.AddItem("abc");
+            defaultHashTable.AddItem("123"); //should double here
+            defaultHashTable.AddItem("890");
+            defaultHashTable.RemoveItem("890");
+            defaultHashTable.RemoveItem("anakin");
+            Assert.AreEqual(false, defaultHashTable.FindItem("890"));
+            Assert.AreEqual(false, defaultHashTable.FindItem("anakin"));
+        }
 
 
 

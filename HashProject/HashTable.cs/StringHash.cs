@@ -14,7 +14,6 @@ namespace HashTableLibrary
         bool defaultSize = false;
         bool definedSize = false;
         int size;
-        int largestAddIndex;
         string[] hashArray;
         int[] primeSizeArray = new int[] { 11, 23, 47, 97, 217, 437 };
 
@@ -66,8 +65,6 @@ namespace HashTableLibrary
                     int index = Hash(item);
                     index = FindNextFreeSpace(index);
                     hashArray[index] = item;
-                    if (index > largestAddIndex)
-                        largestAddIndex = index;
                 }
             }
             else
@@ -95,14 +92,14 @@ namespace HashTableLibrary
                 bool isWrapped = false;
                 while (hashArray[runningIndex] != item)
                 {
-                    if (runningIndex == this.size - 1)
+                    if ((runningIndex - 1) == index && isWrapped == true && hashArray[runningIndex] != item) //meaning that it has wrapped
+                    {
+                        return false;
+                    }
+                    else if (runningIndex == this.size - 1)
                     {
                         runningIndex = 0;
                         isWrapped = true;
-                    }
-                    else if ((runningIndex - 1) == index && isWrapped==true && hashArray[runningIndex] != item) //meaning that it has wrapped
-                    {
-                        return false;
                     }
                     else
                     {
