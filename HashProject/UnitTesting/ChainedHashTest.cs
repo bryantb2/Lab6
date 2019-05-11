@@ -49,41 +49,37 @@ namespace UnitTesting
             defaultChainTable.AddItem("anakin");
             defaultChainTable.AddItem("grevious");
             defaultChainTable.AddItem("vader");
+            try
+            {
+                defaultChainTable.FindItem("");
+                Assert.Fail("FindItem did not throw an exception");
+            }
+            catch (ArgumentException)
+            {
+                Assert.Pass("The AddItem method threw an exception!");
+            }
             Assert.AreEqual(true, defaultChainTable.FindItem("vader"));
             Assert.AreEqual(true, defaultChainTable.FindItem("grevious"));
-            Assert.AreEqual(false, defaultChainTable.FindItem(""));
+            Assert.AreEqual(true, defaultChainTable.FindItem("obi-wan"));
+            Assert.AreEqual(true, defaultChainTable.FindItem("anakin"));
             Assert.AreEqual(false, defaultChainTable.FindItem("rader"));
-        }
-        /*
-        [Test]
-        public void DoubleHashTableTest()
-        {
-            int originalSize = defaultHashTable.Size;
-            defaultHashTable.AddItem("obi-wan");
-            defaultHashTable.AddItem("anakin");
-            defaultHashTable.AddItem("grevious");
-            defaultHashTable.AddItem("vader");
-            defaultHashTable.AddItem("abc");
-            defaultHashTable.AddItem("123"); //should double here
-            defaultHashTable.AddItem("890");
-            Assert.AreEqual(23, defaultHashTable.Size);
         }
 
         [Test]
         public void FindAndRemoveTest()
         {
-            int originalSize = defaultHashTable.Size;
-            defaultHashTable.AddItem("obi-wan");
-            defaultHashTable.AddItem("anakin");
-            defaultHashTable.AddItem("grevious");
-            defaultHashTable.AddItem("vader");
-            defaultHashTable.AddItem("abc");
-            defaultHashTable.AddItem("123"); //should double here
-            defaultHashTable.AddItem("890");
-            defaultHashTable.RemoveItem("890");
-            defaultHashTable.RemoveItem("anakin");
-            Assert.AreEqual(false, defaultHashTable.FindItem("890"));
-            Assert.AreEqual(false, defaultHashTable.FindItem("anakin"));
-        }*/
+            int originalSize = defaultChainTable.Size;
+            defaultChainTable.AddItem("obi-wan");
+            defaultChainTable.AddItem("anakin");
+            defaultChainTable.AddItem("grevious");
+            defaultChainTable.AddItem("vader");
+            defaultChainTable.AddItem("abc");
+            defaultChainTable.AddItem("123");
+            defaultChainTable.AddItem("890");
+            defaultChainTable.RemoveItem("890");
+            defaultChainTable.RemoveItem("anakin");
+            Assert.AreEqual(false, defaultChainTable.FindItem("890"));
+            Assert.AreEqual(false, defaultChainTable.FindItem("anakin"));
+        }
     }
 }

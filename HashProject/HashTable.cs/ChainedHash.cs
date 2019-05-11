@@ -125,30 +125,37 @@ namespace HashTableLibrary
 
         public bool FindItem(string item)
         {
-            //hash the item and return the index
-            //if the head node of the indexed element equals item, return true
-            //else iterate through the element until the value is found
-                //return true if found
-                //otherwise false
-            int index = Hash(item);
-            if (hashArray[index].Value == item)
+            if (item == "")
             {
-                return true;
+                throw new ArgumentException("Enter a non-empty string");
             }
             else
             {
-                Node<string> currentNode = hashArray[index];
-                while (currentNode != null)
+                //hash the item and return the index
+                //if the head node of the indexed element equals item, return true
+                //else iterate through the element until the value is found
+                //return true if found
+                //otherwise false
+                int index = Hash(item);
+                if (hashArray[index] != null && hashArray[index].Value == item)
                 {
-                    if(currentNode.Value == item)
-                    {
-                        return true;
-                    }
-                    currentNode = currentNode.Next;
+                    return true;
                 }
-                return false;
-                //if true was not returned within the while loop,
-                //then it means that the list does not contain the desired value
+                else
+                {
+                    Node<string> currentNode = hashArray[index];
+                    while (currentNode != null)
+                    {
+                        if (currentNode.Value == item)
+                        {
+                            return true;
+                        }
+                        currentNode = currentNode.Next;
+                    }
+                    return false;
+                    //if true was not returned within the while loop,
+                    //then it means that the list does not contain the desired value
+                }
             }
         }
 
